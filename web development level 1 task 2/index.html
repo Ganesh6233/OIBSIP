@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <p style="
+    display: flex;
+    flex-direction: right;
+    justify-content: right;
+    margin: 15px;
+    padding-right: 800px;
+    font-size: 1.5em;">
+    Ganesh
+</p> 
+        <ul id="nav-list">
+            <li>
+                <a href="#homesec">Home</a>
+            </li>
+            <li>
+                <a href="#Educatsec">Education</a>
+            </li>
+            <li>
+                <a href="#Skillssec">Skills</a>
+            </li>
+            <li>
+                <a href="#Consec">Contact</a>
+            </li>
+        </ul>
+        <hr>
+    </nav>
+    
+    <section id="homesec" class="homesec">
+        <div class="home-container">
+            <h1>Hi, my name is Ganesh</h1>
+            <p>  I'm a web developer from Hyderabad. I'm just starting out on my journey as a developer and I'm excited to learn and grow in this field. I've completed some online courses in HTML, CSS, and JavaScript and I'm eager to put my skills to use.</p>
+            <a href="#Consec" class="btn">Hire me</a>
+        </div>
+    </section>
+    <hr>
+    <section id="Educatsec" class="education-container">
+        <h2 style="font-size: 2rem;"><u>Education</u></h2>
+        <div class="education-row">
+            <div class="education-col">
+                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                <p>CMR College of Engineering  and Technology, Hyderabad<br>2020 - 2024</p>
+            </div>
+            <div class="education-col">
+                <ul>
+                    <li>CGPA: 7.88</li>
+                </ul>
+            </div>
+        </div>
+        <div class="education-row">
+            <div class="education-col">
+                <h3>Higher Secondary Education (12th)</h3>
+                <p>Jawahar Navodaya Vidyalaya, Karimnagar<br>2018 - 2020</p>
+            </div>
+            <div class="education-col">
+                <ul>
+                    <li>Percentage: 86.2%</li>
+                    <li>Stream: Mathematics, Physics, Chemistry, Computer Science</li>
+                </ul>
+            </div>
+        </div>
+        <div class="education-row">
+            <div class="education-col">
+                <h3>Secondary Education (10th)</h3>
+                <p>Jawahar Navodaya Vidyalaya, Karimnagar<br>2017</p>
+            </div>
+            <div class="education-col">
+                <ul>
+                    <li>Percentage: 78</li>
+                </ul>
+            </div>
+        </div>
+    </section>        
+    <hr>
+            <section id="Skillssec" class="skills-container">
+                <h2><u>Skills</u></h2>
+                <ul>
+                    <li>Programming languages:C++, C, Java, Python, HTML, CSS</li>
+                    <li>Database: MySQL</li>
+                    <li>Tools: Visual Studio Code, Eclipse</li>
+                    <li>Operating systems: Windows, Linux</li>
+                </ul>
+            </section> 
+            <hr>
+            <section id="Consec" class="contact-container">
+                <h2><u>Contact Me</u></h2>
+                <form id="contact-form" method="post" action="">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+            
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+            
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+            </body>
+            </html>
