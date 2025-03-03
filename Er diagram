@@ -1,0 +1,88 @@
+// Authentication Database
+Table User {
+  UserID int [primary key]
+  Email varchar
+  Phone varchar
+  PasswordHash varchar
+  Role varchar // Farmer, Dealer, Admin
+}
+
+Table Session {
+  SessionID int [primary key]
+  UserID int [not null] // FK to User
+  Token varchar
+  ExpiryDate datetime
+}
+
+Ref: Session.UserID > User.UserID
+
+// Farmers Database
+Table Farmer {
+  FarmerID int [primary key]
+  UserID int [not null] // FK to User
+  Name varchar
+  Phone varchar
+  Location varchar
+  BankAccountDetails varchar
+}
+
+Table Crop {
+  CropID int [primary key]
+  FarmerID int [not null] // FK to Farmer
+  Name varchar
+  Type varchar // Vegetable or Fruit
+  Quantity int
+  Price decimal
+  Location varchar
+  Status varchar // Available, Sold
+}
+
+Table Orders {
+  OrderID int [primary key]
+  CropID int [not null] // FK to Crop
+  DealerID int [not null] // FK to Dealer
+  Quantity int
+  AgreedPrice decimal
+  Status varchar // Pending, Completed
+  PaymentStatus varchar // Success, Failed
+}
+
+Table Payments {
+  PaymentID int [primary key]
+  OrderID int [not null] // FK to Orders
+  Amount decimal
+  PaymentMethod varchar // Credit, Debit, UPI
+  Status varchar // Success, Failed
+}
+
+// Dealers Database
+Table Dealer {
+  DealerID int [primary key]
+  UserID int [not null] // FK to User
+  BusinessName varchar
+  Phone varchar
+  BankAccountDetails varchar
+}
+
+Table Subscription {
+  SubscriptionID int [primary key]
+  DealerID int [not null] // FK to Dealer
+  CropType varchar
+}
+
+Table Invoice {
+  InvoiceID int [primary key]
+  OrderID int [not null] // FK to Orders
+  GeneratedDate datetime
+  TotalAmount decimal
+}
+
+// Relationships
+Ref: Farmer.UserID > User.UserID
+Ref: Dealer.UserID > User.UserID
+Ref: Crop.FarmerID > Farmer.FarmerID
+Ref: Orders.CropID > Crop.CropID
+Ref: Orders.DealerID > Dealer.DealerID
+Ref: Payments.OrderID > Orders.OrderID
+Ref: Invoice.OrderID > Orders.OrderID
+Ref: Subscription.DealerID > Dealer.DealerID
